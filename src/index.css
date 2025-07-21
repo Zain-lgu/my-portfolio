@@ -1,0 +1,59 @@
+/* src/index.css (or main.css) */
+
+/* Basic CSS Reset & Global Styles (rest remains the same) */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body,
+h1, h2, h3, h4, h5, h6,
+p, ul, ol, figure, figcaption, blockquote, dl, dd {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background-color: #f8f8f8;
+  -webkit-font-smoothing: antialiased;
+  scroll-behavior: smooth;
+}
+
+ul:where([class]), ol:where([class]) {
+  list-style: none;
+}
+
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+img, picture {
+  max-width: 100%;
+  display: block;
+}
+
+input, button, textarea, select {
+  font: inherit;
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Updated Primary Accent Color Variables for Metallic Orange */
+:root {
+  --primary-accent: #E67E22; /* A vibrant, deep orange (Metallic Orange base) */
+  --primary-accent-dark: #D35400; /* Darker shade for hover states */
+  --text-dark: #333;
+  --text-light: #555;
+  --bg-light: #f8f8f8;
+  --bg-white: #ffffff;
+  --border-light: #eee;
+  --shadow-subtle: 0 2px 10px rgba(0, 0, 0, 0.08);
+}

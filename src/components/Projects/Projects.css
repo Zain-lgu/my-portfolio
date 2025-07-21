@@ -1,0 +1,245 @@
+/* src/components/Projects/Projects.css */
+
+.projects-section {
+    padding: 100px 40px;
+    background-color: var(--bg-white); /* White background for this section */
+    color: var(--text-dark);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.projects-container {
+    max-width: 1200px;
+    width: 100%;
+}
+
+.projects-title {
+    font-size: 2.5em;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 20px;
+    position: relative;
+    display: inline-block;
+}
+
+.projects-title::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: -10px;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 4px;
+    background-color: var(--primary-accent); /* Orange underline */
+    border-radius: 2px;
+}
+
+.projects-intro-text {
+    font-size: 1.1em;
+    color: var(--text-light);
+    margin-bottom: 60px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.6;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); /* Responsive grid for cards */
+    gap: 50px; /* Space between project cards */
+    justify-content: center;
+}
+
+.project-card {
+    background-color: var(--bg-white);
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    overflow: hidden; /* Ensures image corners are rounded */
+    display: flex;
+    flex-direction: column;
+    height: 100%; /* Ensures cards in a row have equal height */
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    text-align: left; /* Text content within card is left-aligned */
+}
+
+.project-card:hover {
+    transform: translateY(-8px); /* Lift effect on hover */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.project-image-wrapper {
+    width: 100%;
+    height: 250px; /* Fixed height for consistent image size */
+    overflow: hidden;
+    background-color: #f0f0f0; /* Placeholder background */
+    display: flex; /* For centering placeholder text/icon */
+    justify-content: center;
+    align-items: center;
+}
+
+.project-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Covers the area, cropping if necessary */
+    transition: transform 0.3s ease-in-out;
+}
+
+.project-card:hover .project-img {
+    transform: scale(1.05); /* Slight zoom on image hover */
+}
+
+.project-info {
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1; /* Allows info section to grow and fill space */
+}
+
+.project-name {
+    font-size: 1.8em;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 15px;
+}
+
+.highlight-project-title { /* Apply metallic orange to project titles */
+    color: var(--primary-accent); 
+    text-shadow: 
+      1px 1px 1px rgba(0, 0, 0, 0.1),
+      -1px -1px 1px rgba(255, 255, 255, 0.1);
+}
+
+.project-description {
+    font-size: 1em;
+    color: var(--text-light);
+    line-height: 1.7;
+    margin-bottom: 20px;
+    flex-grow: 1; /* Allows description to take up available space */
+}
+
+.project-tech-stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 15px; /* Space above tech badges */
+    margin-bottom: 25px; /* Space below tech badges */
+}
+
+.tech-badge {
+    background-color: var(--primary-accent); /* Orange badge background */
+    color: var(--bg-white);
+    padding: 6px 12px;
+    border-radius: 5px;
+    font-size: 0.85em;
+    font-weight: 500;
+    text-transform: capitalize;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.project-links {
+    display: flex;
+    gap: 15px;
+    margin-top: auto; /* Pushes links to the bottom of the card */
+}
+
+.project-button {
+    /* Inherits cta-button styles from Hero.css */
+    padding: 12px 20px;
+    font-size: 0.95em;
+    border-radius: 6px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    background-color: #3192bf;
+}
+
+.project-button:hover {
+    background-color: var(--primary-accent-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Specific button colors if needed (optional, using primary accent by default) */
+/* .demo-button { background-color: #28a745; }
+.demo-button:hover { background-color: #218838; }
+.github-button { background-color: #6c757d; }
+.github-button:hover { background-color: #5a6268; } */
+
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 1024px) {
+    .projects-grid {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 40px;
+    }
+    .projects-title {
+        font-size: 2.2em;
+    }
+    .project-name {
+        font-size: 1.6em;
+    }
+    .project-image-wrapper {
+        height: 220px;
+    }
+}
+
+@media (max-width: 768px) {
+    .projects-section {
+        padding: 80px 20px;
+    }
+    .projects-grid {
+        grid-template-columns: 1fr; /* Single column on mobile */
+        gap: 30px;
+    }
+    .projects-title {
+        font-size: 2em;
+        margin-bottom: 15px;
+    }
+    .projects-intro-text {
+        font-size: 1em;
+        margin-bottom: 40px;
+    }
+    .project-card {
+        max-width: 450px; /* Constrain single card width on mobile */
+        margin: 0 auto; /* Center single card */
+    }
+    .project-name {
+        font-size: 1.5em;
+    }
+    .project-image-wrapper {
+        height: 200px;
+    }
+    .project-info {
+        padding: 20px;
+    }
+    .project-description {
+        font-size: 0.95em;
+    }
+    .project-links {
+        justify-content: center; /* Center buttons when stacked */
+    }
+}
+
+@media (max-width: 480px) {
+    .projects-section {
+        padding: 60px 15px;
+    }
+    .projects-title {
+        font-size: 1.8em;
+    }
+    .project-image-wrapper {
+        height: 180px;
+    }
+    .project-name {
+        font-size: 1.3em;
+    }
+    .tech-badge {
+        font-size: 0.8em;
+        padding: 5px 10px;
+    }
+    .project-button {
+        font-size: 0.9em;
+        padding: 10px 18px;
+    }
+}

@@ -1,0 +1,234 @@
+/* src/components/Contact/Contact.css */
+
+.contact-section {
+    padding: 50px 40px;
+    background-color: var(--bg-light); /* Light background for contrast */
+    color: var(--text-dark);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.contact-container {
+    max-width: 1000px;
+    width: 100%;
+}
+
+.contact-title {
+    font-size: 2.5em;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 20px;
+    position: relative;
+    display: inline-block;
+}
+
+.contact-title::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: -10px;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 4px;
+    background-color: var(--primary-accent); /* Orange underline */
+    border-radius: 2px;
+}
+
+.contact-intro-text {
+    font-size: 1.1em;
+    color: var(--text-light);
+    margin-bottom: 60px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.6;
+}
+
+.contact-content {
+    display: flex;
+    flex-wrap: wrap; /* Allows wrapping on smaller screens */
+    gap: 40px;
+    justify-content: center;
+    align-items: flex-start; /* Align items to the top */
+}
+
+.contact-form-wrapper {
+    flex: 2; /* Takes more space for the form */
+    min-width: 300px; /* Minimum width before wrapping */
+    max-width: 600px;
+    background-color: var(--bg-white);
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: var(--shadow-subtle);
+    text-align: left; /* Align form labels/inputs left */
+}
+
+.contact-form .form-group {
+    margin-bottom: 20px;
+}
+
+.contact-form label {
+    display: block;
+    font-size: 1em;
+    color: var(--text-dark);
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid var(--border-light);
+    border-radius: 5px;
+    font-size: 1em;
+    color: var(--text-dark);
+    background-color: #fcfcfc;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    outline: none;
+    border-color: var(--primary-accent); /* Orange border on focus */
+    box-shadow: 0 0 0 3px rgba(var(--primary-accent-rgb), 0.2); /* Subtle glow */
+}
+
+.contact-form textarea {
+    resize: vertical; /* Allow vertical resizing */
+    min-height: 120px;
+}
+
+.submit-button {
+    width: auto; /* Allow button to size to content */
+    margin-top: 10px;
+    cursor: pointer;
+    /* Inherits cta-button styles from Hero.css / Projects.css */
+    /* Add specific styles if needed, but primary accent should work */
+}
+
+.contact-info-wrapper {
+    flex: 1; /* Takes less space than form */
+    min-width: 250px; /* Minimum width before wrapping */
+    max-width: 350px;
+    background-color: var(--bg-white);
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: var(--shadow-subtle);
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center content within info box */
+    text-align: center;
+}
+
+.info-heading {
+    font-size: 1.5em;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 15px;
+}
+
+.info-text {
+    font-size: 1em;
+    color: var(--text-light);
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+.social-links {
+    display: flex;
+    gap: 25px;
+    margin-bottom: 30px;
+    flex-wrap: wrap; /* Allow wrapping on small screens */
+    justify-content: center;
+}
+
+.social-icon-link {
+    font-size: 2.5em;
+    color: var(--primary-accent); /* Orange icons */
+    transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.social-icon-link:hover {
+    color: var(--primary-accent-dark); /* Darker orange on hover */
+    transform: scale(1.1);
+}
+
+.location-text {
+    font-size: 0.95em;
+    color: var(--text-light);
+    font-style: italic;
+    margin-top: auto; /* Pushes to bottom of info box */
+}
+
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 1024px) {
+    .contact-content {
+        gap: 30px;
+    }
+    .contact-form-wrapper, .contact-info-wrapper {
+        padding: 30px;
+    }
+    .contact-title {
+        font-size: 2.2em;
+    }
+}
+
+@media (max-width: 768px) {
+    .contact-section {
+        padding: 80px 20px;
+    }
+    .contact-content {
+        flex-direction: column; /* Stack form and info vertically */
+        align-items: center; /* Center items when stacked */
+        gap: 30px;
+    }
+    .contact-form-wrapper, .contact-info-wrapper {
+        min-width: unset; /* Remove min-width to allow full width */
+        max-width: 100%; /* Take full width available */
+        width: 100%; /* Ensure they stretch */
+        padding: 25px;
+    }
+    .contact-title {
+        font-size: 2em;
+        margin-bottom: 15px;
+    }
+    .contact-intro-text {
+        font-size: 1em;
+        margin-bottom: 40px;
+    }
+    .social-links {
+        gap: 20px;
+    }
+    .social-icon-link {
+        font-size: 2em;
+    }
+}
+
+@media (max-width: 480px) {
+    .contact-section {
+        padding: 60px 15px;
+    }
+    .contact-title {
+        font-size: 1.8em;
+    }
+    .contact-form-wrapper, .contact-info-wrapper {
+        padding: 20px;
+    }
+    .contact-form label, .info-heading {
+        font-size: 0.95em;
+    }
+    .contact-form input, .contact-form textarea, .info-text {
+        font-size: 0.9em;
+    }
+    .social-links {
+        gap: 15px;
+    }
+    .social-icon-link {
+        font-size: 1.8em;
+    }
+}

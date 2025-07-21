@@ -1,0 +1,138 @@
+/* src/components/Header/Header.css */
+
+.header {
+    width: 100%;
+    padding: 10px 40px; /* Adjust padding for desktop */
+    position: fixed; /* Stays at the top */
+    top: 0;
+    left: 0;
+    background-color: cadetblue; /* Initially transparent */
+    transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Smooth transition */
+    z-index: 1000; /* Ensures it's above other content */
+    display: flex; /* Use flexbox for layout */
+    justify-content: center; /* Center the content inside */
+}
+
+.header.scrolled {
+    background-color: var(--bg-white); /* Semi-transparent white on scroll */
+    box-shadow: var(--shadow-subtle); /* Subtle shadow on scroll */
+}
+
+.navbar {
+    width: 100%;
+    max-width: 1200px; /* Max width to keep content contained */
+    display: flex;
+    justify-content: space-between; /* Logo left, links right */
+    align-items: center;
+}
+
+.logo {
+    /* We are no longer using font styles for the .logo itself if it contains an image */
+    /* Remove or comment out these lines if they conflict with image sizing: */
+    /* font-family: 'Poppins', sans-serif; */
+    /* font-size: 1.8em; */
+    /* font-weight: 700; */
+    /* letter-spacing: -0.02em; */
+    
+    color: var(--text-dark); /* Keep color for hover/active if needed, or remove */
+    text-decoration: none;
+    /* Ensure the logo container behaves well for the image */
+    display: flex; /* Use flex to align image nicely */
+    align-items: center;
+    height: 50px; /* Match desired height of the logo area */
+}
+
+.logo-img { /* NEW STYLE FOR THE IMAGE */
+    height: 100%; /* Make image fill the height of its parent (.logo) */
+    width: auto; /* Maintain aspect ratio */
+    max-width: 100%; /* Ensure it doesn't overflow its container */
+    object-fit: contain; /* Ensures the whole image is visible within its bounds */
+    border-radius: 0%; /* Optional: if you want a circular profile image */
+    /* If your image is not square and needs to fill, you might use object-fit: cover;
+       and specify both height and width. For a logo/profile, 'contain' is usually better. */
+}
+
+
+.nav-links {
+    display: flex;
+    gap: 30px; /* Space between navigation items */
+}
+
+.nav-links li {
+    list-style: none; /* Remove bullet points */
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #000000; /* Medium gray for links */
+    font-weight: 500;
+    font-size: 1.05em;
+    padding: 5px 0; /* Add some vertical padding */
+    position: relative; /* For underline effect */
+    transition: color 0.3s ease-in-out;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--primary-accent); /* Our accent color (blue) */
+    transition: width 0.3s ease-in-out;
+}
+
+.nav-links a:hover {
+    color: var(--primary-accent); /* Accent color on hover */
+}
+
+.nav-links a:hover::after {
+    width: 100%; /* Expand underline on hover */
+}
+
+/* --- Responsive Adjustments for Header --- */
+@media (max-width: 768px) {
+    .header {
+        padding: 15px 20px;
+    }
+
+    .navbar {
+        flex-direction: column; /* Stack logo and nav links vertically */
+        align-items: flex-start; /* Align logo to left */
+    }
+
+    .nav-links {
+        margin-top: 15px; /* Space between logo and links */
+        flex-wrap: wrap; /* Allow links to wrap to next line */
+        justify-content: center; /* Center links if they wrap */
+        width: 100%; /* Take full width */
+        gap: 20px 15px; /* Smaller gap for mobile */
+    }
+
+    .logo {
+        width: 100%; /* Take full width to align left */
+        text-align: left;
+        height: 35px; /* Adjust logo height for smaller screens */
+    }
+
+    .logo-img { /* Apply responsive styles to the image */
+        height: 100%;
+        width: auto;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo {
+        height: 30px; /* Even smaller logo height */
+    }
+    .logo-img { /* Apply responsive styles to the image */
+        height: 100%;
+        width: auto;
+    }
+
+    .nav-links {
+        font-size: 0.9em;
+        gap: 15px 10px;
+    }
+}

@@ -1,0 +1,84 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  overflow-x: hidden;
+  font-family: 'Rubik', sans-serif;
+}
+
+.app-wrapper {
+  position: relative;
+  background-image: url('./assets/hero.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.header-wrapper {
+  position: relative;
+  z-index: 2;
+}
+
+.header-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 1;
+}
+
+.header-wrapper > *:not(.header-overlay) {
+  position: relative;
+  z-index: 2;
+}
+
+.app-wrapper > *:not(.overlay):not(.header-wrapper) {
+  position: relative;
+  z-index: 2;
+}
+
+/* ✅ Responsive background handling */
+@media (max-width: 768px) {
+  .app-wrapper {
+    background-position: top center;
+  }
+
+  .overlay {
+    background-color: rgba(0, 0, 0, 0.3);
+  }
+
+  .header-overlay {
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+}
+
+@media (max-width: 480px) {
+  .app-wrapper {
+    background-size: cover;
+    background-position: top;
+  }
+
+  .overlay {
+    background-color: rgba(0, 0, 0, 0.35);
+  }
+
+  .header-overlay {
+    background-color: rgba(0, 0, 0, 0.55);
+  }
+}

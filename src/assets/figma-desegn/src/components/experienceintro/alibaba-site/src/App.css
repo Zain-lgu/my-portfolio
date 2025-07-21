@@ -1,0 +1,7 @@
+.hero-bg {
+    background-image: url('C:\Users\H.T\OneDrive\Desktop\alibaba-site\src\assets\bg-img.png'); /* Make sure the path is correct */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 14px 0; /* Adjust padding */
+}

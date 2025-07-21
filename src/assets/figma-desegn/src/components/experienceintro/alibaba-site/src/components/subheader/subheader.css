@@ -1,0 +1,39 @@
+.sub-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 40px;
+    /* background-color: #ff6f00; */
+    font-size: 13px;
+    color: #ffffff;
+    border-bottom: 1px solid #ddd;
+  }
+
+  .category {
+    display: flex;
+    align-items: center;
+    gap: 3px; /* Adjust spacing between icon and text */
+  }
+  
+  .hamburger-icon {
+    font-size: 16px;
+    cursor: pointer;
+    color: #eae7e7;
+  }
+  
+  
+  .sub-left, .sub-right {
+    display: flex;
+    gap: 15px;
+  }
+  
+  .sub-left span, .sub-right span {
+    cursor: pointer;
+  }
+  
+  .sub-left span:hover, .sub-right span:hover {
+    color: #ff6f00;
+  }
+  
+
+  

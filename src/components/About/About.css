@@ -1,0 +1,171 @@
+/* src/components/About/About.css */
+
+.about-section {
+    padding: 100px 40px;
+    background-color: var(--bg-white);
+    color: var(--text-dark);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.about-container {
+    max-width: 1200px;
+    width: 100%;
+    display: flex;
+    gap: 200px;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.about-image-wrapper {
+    flex: 0 0 auto;
+    width: 350px;
+    max-width: 100%;
+    padding: 20px;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.about-title {
+    font-size: 2.5em;
+    font-weight: 700;
+    color: var(--text-dark); /* Title color remains dark text for contrast */
+    margin-bottom: 30px;
+    text-align: center;
+    width: 100%;
+}
+
+.profile-img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 5px solid var(--primary-accent); /* Uses new orange accent for border */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease-in-out;
+}
+
+.profile-img:hover {
+    transform: scale(1.03);
+    border-color: var(--primary-accent-dark); /* Darker orange on hover */
+}
+
+.about-content {
+    flex: 1;
+    max-width: 700px;
+    line-height: 1.8;
+    padding-top: 20px; 
+}
+
+/* Styles for highlighted text (metallic orange and bolder) */
+.highlight {
+    color: var(--primary-accent); /* Uses new orange accent */
+    font-weight: 700; /* Made explicitly bolder */
+    /* Add subtle text shadow for a more metallic/embossed feel */
+    text-shadow: 
+      1px 1px 1px rgba(0, 0, 0, 0.1), /* Darker shadow for depth */
+      -1px -1px 1px rgba(255, 255, 255, 0.1); /* Lighter shadow for sheen */
+    transition: color 0.3s ease; /* Smooth transition if color changes on hover/active */
+}
+
+/* Optional: Deeper orange on hover for highlights if desired */
+.highlight:hover {
+    color: var(--primary-accent-dark);
+}
+
+/* Styles for animated descriptions */
+.about-description {
+    font-size: 1.1em;
+    color: var(--text-light);
+    margin-bottom: 15px;
+    text-align: left;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInSlideUp 0.8s ease-out forwards;
+}
+
+.about-description:last-child {
+    margin-bottom: 0;
+}
+
+@keyframes fadeInSlideUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* --- Responsive Adjustments --- (No changes needed here unless further refinement) */
+@media (max-width: 1024px) {
+    .about-container {
+        gap: 40px;
+    }
+    .about-image-wrapper {
+        width: 300px;
+    }
+    .profile-img {
+        height: 250px;
+    }
+    .about-title {
+        font-size: 2.1em;
+        margin-bottom: 25px;
+    }
+    .about-description {
+        font-size: 1em;
+    }
+}
+
+@media (max-width: 768px) {
+    .about-section {
+        padding: 80px 20px;
+    }
+    .about-container {
+        flex-direction: column;
+        text-align: center;
+        gap: 40px;
+    }
+    .about-image-wrapper {
+        width: 250px;
+        margin: 0 auto;
+        padding: 0;
+    }
+    .profile-img {
+        height: 200px;
+    }
+    .about-title {
+        font-size: 1.8em;
+        margin-bottom: 20px;
+    }
+    .about-content {
+        align-items: center;
+        max-width: 100%;
+        padding-top: 0;
+    }
+    .about-description {
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .about-section {
+        padding: 60px 15px;
+    }
+    .about-image-wrapper {
+        width: 180px;
+    }
+    .profile-img {
+        height: 150px;
+    }
+    .about-title {
+        font-size: 1.5em;
+        margin-bottom: 15px;
+    }
+    .about-description {
+        font-size: 0.95em;
+    }
+}

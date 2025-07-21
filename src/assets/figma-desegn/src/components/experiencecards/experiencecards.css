@@ -1,0 +1,196 @@
+.experience-cards-container {
+    display: flex;
+    gap: 20px;
+    padding: 30px 5%;
+    overflow: hidden;
+    scroll-behavior: smooth;
+}
+
+.experience-cards-container::-webkit-scrollbar {
+    display: none; /* Chrome/Safari */
+}
+
+.experience-card {
+    min-width: calc((100% - 40px) / 3); /* 3 cards + 2 gaps (20px each) */
+    max-width: calc((100% - 40px) / 3);
+    height: 450px;
+    flex-shrink: 0;
+    background-color: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+}
+
+
+.card-image {
+    position: relative;
+    height: 250px;
+    background-size: cover;
+    background-position: center;
+}
+
+.top-left-wrapper {
+    font-family: 'rubik', serif;
+    position: absolute;
+    top: 10px;
+    left: 20px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 1px 5px;
+    border-radius: 20px;
+    backdrop-filter: blur(5px);
+    background-color: rgba(29, 6, 6, 0.2);
+    color: #fff;
+    font-size: 14px;
+}
+
+.star-box {
+    display: flex;
+    align-items: center;
+    gap: 6px; /* spacing between icon and text */
+    padding-right: 1px;
+}
+
+.star-icon {
+    width: 24px;
+    height: 24px;
+    font-size: 16px;
+    background-color: #e1ad01;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+.rating-value {
+    font-size: 14px;
+    color: white;
+    line-height: 1;
+}
+
+
+.top-right-label {
+    font-family: 'rubik', serif;
+    position: absolute;
+    top: 10px;
+    right: 35px;
+    backdrop-filter: blur(8px);
+    background-color: rgba(255, 255, 255, 0.2);
+    padding: 7px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    color: white;
+}
+
+.card-content {
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.card-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.card-title p {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    color: #333;
+}
+
+.heart-icon {
+    font-size: 20px;
+    color: #999;
+    cursor: pointer;
+}
+
+.card-meta {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    font-size: 14px;
+    color: #666;
+}
+
+.location {
+    font-family: 'rubik', serif;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.rating {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.rating .stars {
+    width: 20;
+    height: 31;
+    color: #e1ad01;
+}
+
+.rating .reviews {
+    font-size: 16px;
+    color: #555;
+}
+
+.card-bottom {
+    margin-top: 8px;
+}
+
+.price-options-wrapper {
+    font-family: 'rubik', serif;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-top: 20px;
+}
+
+.pricing {
+    display: flex;
+    flex-direction: column;
+}
+
+.from-price {
+    font-size: 16px;
+    color: #888;
+}
+
+.old-price {
+    font-size: 16px;
+    text-decoration: line-through;
+    margin-left: 2px;
+    color: #999;
+}
+
+.new-price {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.new-price strong {
+    font-size: 24px;
+    font-weight: bold;
+    color: #000;
+}
+
+.new-price .per-person {
+    font-size: 16px;
+    color: #555;
+}
+
+.options {
+    color: #888;
+    font-size: 16px;
+    margin-left: 10px;
+}

@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400&family=Rubik&display=swap');
+
+.hero-section {
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    transform: translateY(-40px) translateX(30px);
+    padding: 0 20px;
+}
+
+.hero-heading {
+    font-family: 'Playfair Display', serif;
+    font-size: 65px;
+    font-weight: 500;
+    color: #ffffff;
+    margin-bottom: 25px;
+}
+
+.hero-text {
+    font-family: 'Rubik', sans-serif;
+    font-size: 18px;
+    color: #ffffff;
+    max-width: 1000px;
+    width: 90%;
+    letter-spacing: 2px;
+    line-height: 1.2;
+}
+
+
+/* 🔽 Responsive Styling */
+@media (max-width: 768px) {
+    .hero-section {
+        transform: none;
+        height: auto;
+        padding: 60px 20px 40px;
+    }
+
+    .hero-heading {
+        font-size: 42px;
+        margin-bottom: 20px;
+    }
+
+    .hero-text {
+        font-size: 15px;
+        letter-spacing: 1px;
+        line-height: 1.5;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-heading {
+        font-size: 32px;
+    }
+
+    .hero-text {
+        font-size: 14px;
+    }
+}
