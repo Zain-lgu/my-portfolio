@@ -26,13 +26,49 @@ dd {
   padding: 0;
 }
 
+/* Updated Primary Accent Color Variables for Metallic Orange */
+:root {
+  --primary-accent: #E67E22;
+  /* A vibrant, deep orange (Metallic Orange base) */
+  --primary-accent-dark: #D35400;
+  /* Darker shade for hover states */
+  --text-dark: #1a1a1a;
+  --text-light: #4a4a4a;
+  --bg-light: rgba(244, 244, 249, 0.85);
+  /* Semi-transparent */
+  --bg-white: rgba(255, 255, 255, 0.9);
+  /* Semi-transparent */
+  --border-light: #e0e0e0;
+  --shadow-subtle: 0 4px 20px rgba(0, 0, 0, 0.05);
+  --shadow-hover: 0 10px 25px rgba(230, 126, 34, 0.15);
+  --gradient-primary: linear-gradient(135deg, #E67E22 0%, #F39C12 100%);
+}
+
 body {
   font-family: 'Poppins', sans-serif;
   line-height: 1.6;
   color: #333;
-  background-color: #f8f8f8;
+  /* Animated Background */
+  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+  background-size: 400% 400%;
+  animation: gradientBG 15s ease infinite;
   -webkit-font-smoothing: antialiased;
   scroll-behavior: smooth;
+  min-height: 100vh;
+}
+
+@keyframes gradientBG {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 ul:where([class]),
@@ -63,22 +99,6 @@ select {
   flex-direction: column;
 }
 
-/* Updated Primary Accent Color Variables for Metallic Orange */
-:root {
-  --primary-accent: #E67E22;
-  /* A vibrant, deep orange (Metallic Orange base) */
-  --primary-accent-dark: #D35400;
-  /* Darker shade for hover states */
-  --text-dark: #1a1a1a;
-  --text-light: #4a4a4a;
-  --bg-light: #f4f4f9;
-  --bg-white: #ffffff;
-  --border-light: #e0e0e0;
-  --shadow-subtle: 0 4px 20px rgba(0, 0, 0, 0.05);
-  --shadow-hover: 0 10px 25px rgba(230, 126, 34, 0.15);
-  --gradient-primary: linear-gradient(135deg, #E67E22 0%, #F39C12 100%);
-}
-
 ::selection {
   background: var(--primary-accent);
   color: white;
@@ -100,4 +120,32 @@ select {
 
 ::-webkit-scrollbar-thumb:hover {
   background: var(--primary-accent-dark);
+}
+
+/* Glassmorphism Utility */
+.glass {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.07);
+}
+
+/* Typography Refinements */
+h1,
+h2,
+h3 {
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+
+p {
+  margin-bottom: 1.5rem;
+}
+
+@media (max-width: 768px) {
+  html {
+    font-size: 90%;
+    /* Scale down base font size for mobile */
+  }
 }
