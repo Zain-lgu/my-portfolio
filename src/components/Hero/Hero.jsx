@@ -9,6 +9,7 @@ import DeskImage from '../../assets/desk.jpg'; // Assuming desk.jpg is in 'src/a
 function Hero() {
     return (
         <section id="home" className="hero-section">
+            <div className="hero-bg-blob"></div>
             {/* This new container will hold both the text content and the image */}
             <div className="hero-two-column-container">
                 <motion.div
@@ -21,7 +22,7 @@ function Hero() {
                     <h1 className="hero-title">Zain Ul Abedin.</h1>
                     <h2 className="hero-subtitle">I build engaging web experiences.</h2>
                     <p className="hero-description">
-                        I'm a passionate **React.js Developer** focused on creating intuitive, responsive,
+                        I'm a passionate <b>React.js Developer</b> focused on creating intuitive, responsive,
                         and high-performance web applications. I thrive on solving complex problems
                         and bringing ideas to life through clean and efficient code.
                     </p>
