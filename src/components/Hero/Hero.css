@@ -1,97 +1,57 @@
 /* src/components/Hero/Hero.css */
 
 .hero-section {
-    min-height: 100vh;
-    /* Full viewport height */
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
-    text-align: center;
-    /* This will be overridden by flex alignment */
-    padding: 100px 40px;
-    background-color: var(--bg-light);
+    width: 100%;
+    padding: 120px 40px 100px;
+    /* Top padding for fixed header */
+    background-color: transparent;
+    /* Allow body gradient to show */
     color: var(--text-dark);
     animation: fadeIn 1.5s ease-out;
-    padding-top: 120px;
-    position: relative;
-    z-index: 1;
+    text-align: left;
 }
 
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/* NEW: Container for the two-column layout */
+/* Container for the two-column layout */
 .hero-two-column-container {
     display: flex;
-    /* Makes its children (left content, right image) flex items */
-    justify-content: center;
-    /* Center content horizontally */
+    flex-direction: row;
+    /* Explicitly set to row for desktop */
+    justify-content: space-between;
+    /* Push items to edges */
     align-items: center;
-    /* Align items vertically in the middle */
     max-width: 1200px;
-    /* Limit overall width */
     width: 100%;
-    /* Take full width within max-width */
-    gap: 60px;
-    /* Space between the two columns */
-    text-align: left;
-    /* Reset text alignment for content inside */
+    gap: 40px;
 }
 
 .hero-content-left {
-    /* Styles for the left text column */
     flex: 1;
-    /* Allows this column to grow and shrink */
     max-width: 600px;
-    /* Limit the width of the text content */
     display: flex;
-    /* Use flex to stack text items vertically */
     flex-direction: column;
     align-items: flex-start;
-    /* Align text items to the left within this column */
 }
 
 .hero-image-right {
-    /* Styles for the right image column */
     flex: 1;
-    /* Allows this column to grow and shrink */
     display: flex;
-    justify-content: center;
-    /* Center the image within its column */
+    justify-content: flex-end;
+    /* Align image to the right */
     align-items: center;
-    /* Center the image vertically */
-    /* We don't set a max-width here, the image itself will be constrained */
 }
 
 .desk-img {
-    /* Styles for the actual image */
     width: 100%;
-    /* Make image fill its container width */
     height: auto;
-    /* Maintain aspect ratio */
     max-height: 550px;
-    /* Maximum height for the image to prevent it from getting too large */
     object-fit: contain;
-    /* Ensures the entire image is visible, scaling down if needed */
-    /* object-fit: cover; // Consider 'cover' if you want the image to fill the space and crop */
     border-radius: 10px;
-    /* Slightly rounded corners for the image */
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-    /* Subtle shadow for depth */
 }
 
-
-/* Existing styles below, modified slightly for flex context */
 .intro-text {
     font-size: 1.3em;
     color: var(--primary-accent);
@@ -109,7 +69,6 @@
     opacity: 0;
     animation: slideInUp 0.8s ease-out forwards 0.6s;
     line-height: 1.2;
-    /* Adjust line height for large text */
 }
 
 .hero-subtitle {
@@ -128,12 +87,10 @@
     color: var(--text-light);
     margin-bottom: 40px;
     max-width: 700px;
-    /* Max-width for description text, independent of column */
     opacity: 0;
     animation: slideInUp 0.8s ease-out forwards 1.2s;
 }
 
-/* Animations remain the same */
 @keyframes slideInUp {
     from {
         opacity: 0;
@@ -143,6 +100,16 @@
     to {
         opacity: 1;
         transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
     }
 }
 
@@ -162,12 +129,12 @@
 }
 
 .cta-button:hover {
-    background-color: #0056b3;
+    background-color: var(--primary-accent-dark);
     transform: translateY(-3px);
     box-shadow: 0 6px 20px rgba(0, 123, 255, 0.4);
 }
 
-/* --- Responsive Adjustments for Hero --- */
+/* --- Responsive Adjustments --- */
 @media (max-width: 1024px) {
     .hero-title {
         font-size: 3.2em;
@@ -188,35 +155,33 @@
 
     .hero-two-column-container {
         gap: 40px;
-        /* Reduce gap on smaller desktops */
     }
 
     .desk-img {
         max-height: 450px;
-        /* Adjust max-height for image */
     }
 }
 
 @media (max-width: 768px) {
     .hero-section {
-        padding: 80px 20px;
-        /* More padding top/bottom */
+        padding: 100px 20px 60px;
+        text-align: center;
     }
 
     .hero-two-column-container {
         flex-direction: column;
-        /* Stack columns vertically on mobile/tablet */
+        /* Stack on mobile */
         text-align: center;
-        /* Center content when stacked */
         gap: 50px;
-        /* Space between stacked sections */
     }
 
     .hero-content-left {
         align-items: center;
-        /* Center text items when stacked */
         max-width: 100%;
-        /* Allow text to take full width */
+    }
+
+    .hero-image-right {
+        justify-content: center;
     }
 
     .intro-text {
@@ -240,15 +205,13 @@
 
     .desk-img {
         max-height: 350px;
-        /* Further adjust max-height for mobile */
         width: 80%;
-        /* Don't stretch image too wide on small screens */
     }
 }
 
 @media (max-width: 480px) {
     .hero-section {
-        padding: 60px 15px;
+        padding: 80px 15px 50px;
     }
 
     .intro-text {
@@ -265,6 +228,5 @@
 
     .desk-img {
         max-height: 280px;
-        /* Even smaller image on very small screens */
     }
 }

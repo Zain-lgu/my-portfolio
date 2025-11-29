@@ -1,5 +1,6 @@
 // src/components/Contact/Contact.jsx
 import React, { useState } from 'react';
+import { motion } from 'framer-motion';
 import './Contact.css';
 
 // Import icons for social media links
@@ -34,13 +35,33 @@ function Contact() {
   return (
     <section id="contact" className="contact-section">
       <div className="contact-container">
-        <h2 className="contact-title">Get In Touch</h2>
-        <p className="contact-intro-text">
+        <motion.h2
+          className="contact-title"
+          initial={{ opacity: 0, y: -20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+        >
+          Get In Touch
+        </motion.h2>
+        <motion.p
+          className="contact-intro-text"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.2, duration: 0.5 }}
+        >
           Have a question or want to work together? Feel free to reach out!
-        </p>
+        </motion.p>
 
         <div className="contact-content">
-          <div className="contact-form-wrapper">
+          <motion.div
+            className="contact-form-wrapper"
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
             <form className="contact-form" onSubmit={handleSubmit}>
               <div className="form-group">
                 <label htmlFor="name">Your Name</label>
@@ -94,9 +115,15 @@ function Contact() {
                 Send Message
               </button>
             </form>
-          </div>
+          </motion.div>
 
-          <div className="contact-info-wrapper">
+          <motion.div
+            className="contact-info-wrapper"
+            initial={{ opacity: 0, x: 50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+          >
             <h3 className="info-heading">Connect with me directly</h3>
             <p className="info-text">
               Feel free to send me an email or connect on my social platforms.
@@ -119,9 +146,9 @@ function Contact() {
               </a> */}
             </div>
             <p className="location-text">
-                Currently based in Ārifwāla, Punjab, Pakistan.
+              Currently based in Ārifwāla, Punjab, Pakistan.
             </p>
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>
