@@ -1,5 +1,6 @@
 // src/components/Projects/Projects.jsx
 import React from 'react';
+import { motion } from 'framer-motion';
 import './Projects.css';
 
 // Import project images
@@ -16,7 +17,7 @@ const projectsData = [
     description: "A comprehensive Enterprise Resource Planning (ERP) web application developed for Accurate SAP Company. This system manages client and employee data, task assignments, and detailed product inventory (in/out), providing a robust solution for business operations.",
     image: pestControlERPImage, // Use the imported image
     technologies: ['React.js', 'Context Api', 'Next.js', 'tailwind', 'Gitlab'], // Add more as needed
-    liveDemoLink: 'https://your-pest-control-erp-demo.com', // Replace with actual link or remove
+    liveDemoLink: 'https://accuratepestcontrol.ae/', // Updated link
     githubRepoLink: 'https://github.com/yourusername/pest-control-erp', // Replace with actual link or remove
   },
   {
@@ -29,17 +30,6 @@ const projectsData = [
     githubRepoLink: 'https://github.com/yourusername/pocofy-webapp', // Replace with actual link or remove
   },
   // Add more projects here
-  /*
-  {
-    id: 3,
-    title: 'Another Awesome Project',
-    description: 'Brief description of your third project.',
-    image: yourOtherProjectImage, // Use the imported image
-    technologies: ['React', 'Firebase', '...', '...'],
-    liveDemoLink: 'https://your-third-demo.com',
-    githubRepoLink: 'https://github.com/yourusername/your-third-repo',
-  },
-  */
 ];
 
 function Projects() {
@@ -47,20 +37,42 @@ function Projects() {
     // IMPORTANT: This ID matches the navigation link in the Header
     <section id="projects" className="projects-section">
       <div className="projects-container">
-        <h2 className="projects-title">My Projects</h2>
-        <p className="projects-intro-text">
+        <motion.h2
+          className="projects-title"
+          initial={{ opacity: 0, y: -20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+        >
+          My Projects
+        </motion.h2>
+        <motion.p
+          className="projects-intro-text"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.2, duration: 0.5 }}
+        >
           A selection of personal and professional projects showcasing my skills.
-        </p>
+        </motion.p>
 
         <div className="projects-grid">
-          {projectsData.map((project) => (
-            <div className="project-card" key={project.id}>
+          {projectsData.map((project, index) => (
+            <motion.div
+              className="project-card"
+              key={project.id}
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              whileHover={{ y: -10, transition: { duration: 0.2 } }}
+            >
               {project.image && (
                 <div className="project-image-wrapper">
-                  <img 
-                    src={project.image} 
-                    alt={project.title} 
-                    className="project-img" 
+                  <img
+                    src={project.image}
+                    alt={project.title}
+                    className="project-img"
                   />
                 </div>
               )}
@@ -74,20 +86,20 @@ function Projects() {
                 </div>
                 <div className="project-links">
                   {project.liveDemoLink && (
-                    <a 
-                      href={project.liveDemoLink} 
-                      target="_blank" 
-                      rel="noopener noreferrer" 
+                    <a
+                      href={project.liveDemoLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className="cta-button project-button demo-button"
                     >
                       Live Demo
                     </a>
                   )}
                   {project.githubRepoLink && (
-                    <a 
-                      href={project.githubRepoLink} 
-                      target="_blank" 
-                      rel="noopener noreferrer" 
+                    <a
+                      href={project.githubRepoLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className="cta-button project-button github-button"
                     >
                       GitHub
@@ -95,7 +107,7 @@ function Projects() {
                   )}
                 </div>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>

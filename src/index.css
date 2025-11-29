@@ -1,6 +1,6 @@
 /* src/index.css (or main.css) */
 
-/* Basic CSS Reset & Global Styles (rest remains the same) */
+/* Basic CSS Reset & Global Styles */
 *,
 *::before,
 *::after {
@@ -8,8 +8,20 @@
 }
 
 body,
-h1, h2, h3, h4, h5, h6,
-p, ul, ol, figure, figcaption, blockquote, dl, dd {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+ol,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
   margin: 0;
   padding: 0;
 }
@@ -23,7 +35,8 @@ body {
   scroll-behavior: smooth;
 }
 
-ul:where([class]), ol:where([class]) {
+ul:where([class]),
+ol:where([class]) {
   list-style: none;
 }
 
@@ -31,12 +44,16 @@ a:not([class]) {
   text-decoration-skip-ink: auto;
 }
 
-img, picture {
+img,
+picture {
   max-width: 100%;
   display: block;
 }
 
-input, button, textarea, select {
+input,
+button,
+textarea,
+select {
   font: inherit;
 }
 
@@ -48,12 +65,39 @@ input, button, textarea, select {
 
 /* Updated Primary Accent Color Variables for Metallic Orange */
 :root {
-  --primary-accent: #E67E22; /* A vibrant, deep orange (Metallic Orange base) */
-  --primary-accent-dark: #D35400; /* Darker shade for hover states */
-  --text-dark: #333;
-  --text-light: #555;
-  --bg-light: #f8f8f8;
+  --primary-accent: #E67E22;
+  /* A vibrant, deep orange (Metallic Orange base) */
+  --primary-accent-dark: #D35400;
+  /* Darker shade for hover states */
+  --text-dark: #1a1a1a;
+  --text-light: #4a4a4a;
+  --bg-light: #f4f4f9;
   --bg-white: #ffffff;
-  --border-light: #eee;
-  --shadow-subtle: 0 2px 10px rgba(0, 0, 0, 0.08);
+  --border-light: #e0e0e0;
+  --shadow-subtle: 0 4px 20px rgba(0, 0, 0, 0.05);
+  --shadow-hover: 0 10px 25px rgba(230, 126, 34, 0.15);
+  --gradient-primary: linear-gradient(135deg, #E67E22 0%, #F39C12 100%);
+}
+
+::selection {
+  background: var(--primary-accent);
+  color: white;
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-light);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--primary-accent);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary-accent-dark);
 }
